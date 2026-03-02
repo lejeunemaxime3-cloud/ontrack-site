@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ONTRACK</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kodchasan', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('bg.jpg') center/cover no-repeat;
+  color: white;
+  position: relative;
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+  max-width: 380px;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+form {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: opacity 0.6s ease;
+}
+
+input {
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.06);
+  color: white;
+  padding: 0 18px;
+  outline: none;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+button {
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.8);
+  background: transparent;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+.success {
+  margin-top: 80px;
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  opacity: 0;
+  font-weight: 300;
+  transition: opacity 1.2s ease;
+}
+
+.success.show {
+  opacity: 0.85;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>ONTRACK</h1>
+
+  <form 
+    action="https://gmail.us22.list-manage.com/subscribe/post?u=a8f24659a6c4724aeab0ad099&id=f33c6adea8&f_id=00a1c2e1f0"
+    method="post"
+    target="hidden_iframe"
+    onsubmit="showSuccess()"
+  >
+    <input type="email" name="EMAIL" placeholder="ENTER" required />
+    <button type="submit">JOIN</button>
+  </form>
+
+  <div class="success" id="successMessage">LOCKED IN</div>
+</div>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+function showSuccess() {
+  const form = document.querySelector("form");
+  const success = document.getElementById("successMessage");
+
+  form.style.opacity = "0";
+
+  setTimeout(() => {
+    form.style.display = "none";
+    success.classList.add("show");
+  }, 600);
+}
+</script>
+
+</body>
+</html>
