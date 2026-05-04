@@ -12,7 +12,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@500;600;700&family=Archivo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,7 +24,7 @@
     --hairline: rgba(255, 255, 255, 0.18);
     --bg: #000000;
     --brand-font: 'Kodchasan', sans-serif;
-    --body-font: 'Manrope', sans-serif;
+    --body-font: 'Archivo', sans-serif;
   }
 
   html, body { height: 100%; }
@@ -140,7 +140,7 @@
     max-width: 420px;
   }
 
-  /* Status pill above logo — Manrope */
+  /* Status above logo — plain text, no border */
   .status {
     display: inline-flex;
     align-items: center;
@@ -152,10 +152,6 @@
     color: var(--fg-dim);
     margin-bottom: 40px;
     font-weight: 500;
-    padding: 8px 16px;
-    border: 1px solid var(--hairline);
-    border-radius: 100px;
-    backdrop-filter: blur(8px);
   }
 
   .status-dot {
@@ -183,18 +179,6 @@
     margin-bottom: 48px;
   }
 
-  h1::after {
-    content: ".";
-    color: var(--fg);
-    margin-left: -0.18em;
-    animation: dotGlow 3.5s ease-in-out infinite;
-  }
-
-  @keyframes dotGlow {
-    0%, 100% { text-shadow: 0 0 0 transparent; }
-    50% { text-shadow: 0 0 14px rgba(255,255,255,0.85); }
-  }
-
   /* Hairline divider */
   .divider {
     width: 40px;
@@ -214,7 +198,7 @@
   /* Input — Manrope, centered placeholder & input text */
   input {
     height: 50px;
-    border-radius: 14px;
+    border-radius: 0;
     border: 1px solid var(--hairline);
     background: rgba(255, 255, 255, 0.04);
     color: var(--fg);
@@ -247,7 +231,7 @@
   /* Button — Manrope */
   button {
     height: 50px;
-    border-radius: 14px;
+    border-radius: 0;
     border: 1px solid rgba(255,255,255,0.85);
     background: transparent;
     color: var(--fg);
@@ -343,7 +327,7 @@
 <body>
 
 <div class="top-meta">
-  <span>VOL. 01</span>
+  <span>ONTRACK · VOL. 01</span>
   <span>EST. 2026</span>
 </div>
 
@@ -410,5 +394,4 @@
 </script>
 
 </body>
-</html>
 </html>
